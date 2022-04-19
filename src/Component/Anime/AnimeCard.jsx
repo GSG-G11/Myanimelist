@@ -4,7 +4,11 @@ function AnimeCard(props) {
   const [anime, setAnime] = useState(props.anime);
   const [isLoading, setIsLoading] = useState(true);
 
+  const handleonclickAnime = (id) => {
+    console.log(id);
 
+    
+  };
   const search = props.title;
   console.log(search);
   useEffect(() => {
@@ -46,6 +50,9 @@ function AnimeCard(props) {
                 <div className="averageRating">
                   {anime.attributes.averageRating}
                 </div>
+                <button onClick={ () => handleonclickAnime(anime.id)}>
+                  About
+                </button>
               </div>
             </div>
           ))}
@@ -54,6 +61,7 @@ function AnimeCard(props) {
       
     
     </div>
+
   );
 }
 
