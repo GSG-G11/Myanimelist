@@ -3,7 +3,7 @@ import AnimeCard from "./Component/Anime/AnimeCard";
 function App() {
   return (
     <div className="App">
-   <AnimeCard id="aot" />
+   <AnimeCard title="aot"  />
     </div>
   );
 }

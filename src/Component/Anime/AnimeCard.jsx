@@ -1,56 +1,60 @@
-import React, {useState, useEffect} from 'react';
-import './AnimeCard.css';
-
+import React, { useState, useEffect } from "react";
+import "./AnimeCard.css";
 function AnimeCard(props) {
+  const [anime, setAnime] = useState(props.anime);
+  const [isLoading, setIsLoading] = useState(true);
 
- 
-  return (
-    <div className="container">
+
+  const search = props.title;
+  console.log(search);
+  useEffect(() => {
+      if(search=== "" || search === undefined){
+        fetch(`https://kitsu.io/api/edge/anime?page[limit]=12&page[offset]=0`)
+        .then((response) => response.json())
+        .then((data) => {
+          setAnime(data);
+          setIsLoading(false);
+        });
+      }else{
+        fetch(`https://kitsu.io/api/edge/anime?page[limit]=12&filter%5Btext%5D=${search}`)
+        .then((response) => response.json())
+        .then((data) => {
+          setAnime(data);
+          setIsLoading(false);
+        });
+      }
   
+  }, [search]);
 
-        <div className="animeCard">
-          <div className="imgCard">
-            <img src="https://img1.ak.crunchyroll.com/i/spire4/5568ffb263f6bcba85a639980b80dd9a1612993223_full.jpg" alt="" />
-          </div>
-          <div className="footer">
-                  <p className="animeTitle">Naruto</p>
-                  <p className="averageRating">7.9</p>
-                </div>
-        </div>
-        <div className="animeCard">
-          <div className="imgCard">
-            <img src="https://m.media-amazon.com/images/M/MV5BODcwNWE3OTMtMDc3MS00NDFjLWE1OTAtNDU3NjgxODMxY2UyXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg" alt="" />
-          </div>
-          <div className="footer">
-                  <p className="animeTitle">One Piece</p>
-                  <p className="averageRating">10</p>
-                </div>
-        </div>
-        <div className="animeCard">
-          <div className="imgCard">
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Bleachanime.png/220px-Bleachanime.png" alt="" />
-          </div>
-          <div className="footer">
-                  <p className="animeTitle">Bleach</p>
-                  <p className="averageRating">8.9</p>
-                </div>
-        </div>
-        <div className="animeCard">
-          <div className="imgCard">
-            <img src="https://img1.ak.crunchyroll.com/i/spire3/dac363972d628a7009e04fdeb9d7104a1641869274_main.jpg" alt="" />
-          </div>
-          <div className="footer">
-                  <p className="animeTitle">Attack On Titen</p>
-                  <div className='cirlce'>
-                  <p className="averageRating">6.5</p>
 
-                  </div>
 
+  return (
+    <div>
+      {isLoading ? (
+        <div className="loading">Loading...</div>
+      ) : (
+        <div className="container">
+          {anime.data.map((anime) => (
+            <div  className="animeCard">
+              <div className="imgCard">
+                <img src={anime.attributes.posterImage.small} alt="anime" />
+              </div>
+              <div className="footer">
+                <div className="animeTitle">
+                  {anime.attributes.titles.en_jp}
                 </div>
+                <div className="averageRating">
+                  {anime.attributes.averageRating}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
+      )}
+      
+    
     </div>
   );
 }
-
 
 export default AnimeCard;

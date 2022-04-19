@@ -44,11 +44,11 @@
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: 600;
-    background-color: #2E51A2;
+    /* background-color: #2E51A2;
     border-radius: 50%;
     height: 35px;
-    width: 35px;
-    color: white;
+    width: 35px; */
+    color: #2E51A2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,4 +60,13 @@
     justify-content: space-between;
     padding: 0 20px;
     align-items: center;
+}
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #2E51A2;
+    font-size: 50px;
+    font-weight: bold;
 }
