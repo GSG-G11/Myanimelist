@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NotFound from "../NotFound";
 import "./AnimeCard.css";
 function AnimeCard(props) {
   const [anime, setAnime] = useState(props.anime);
@@ -38,7 +39,7 @@ function AnimeCard(props) {
         <div className="loading">Loading...</div>
       ) : (
         <div className="container">
-          {anime.data.map((anime) => (
+          {anime.data.length ? (anime.data.map((anime) => (
             <div  className="animeCard">
               <div className="imgCard">
                 <img src={anime.attributes.posterImage.small} alt="anime" />
@@ -55,7 +56,8 @@ function AnimeCard(props) {
                 </button>
               </div>
             </div>
-          ))}
+          ))): (<h1>No Anime Found</h1>)}
+         
         </div>
       )}
       
