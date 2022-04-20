@@ -1,23 +1,39 @@
 .navbar {
-  width: 100%;
+ 
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   display: flex;
-  align-items: center;
-  padding: 0.8rem 0.8rem;
-  justify-content: flex-start;
+  flex-direction: row;
   gap: 115px;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: #fff;
+
 }
 
 .logo {
   width: 250px;
+  margin-left: 125px;
+
 }
 
 .login {
   background-color: rgb(23, 23, 228);
   color: floralwhite;
   padding: 0 30px;
-  border-radius: 15px;
+  border-radius: 10px;
   height: 50px;
+    border: transparent;
+  font-weight: bold;
+  font-size: 20px;
   cursor: pointer;
+  margin-right: 170px;
 }
 .login:hover {
   background-color: rgb(113, 113, 141);
@@ -25,15 +41,13 @@
 }
 
 .search {
-  width: 100%;
-  padding-left: 40px;
-  padding-right: 30px;
+  width: 700px;
   height: 50px;
-  font-size: 0.9rem;
-  font-weight: 400;
   color: #495057;
-  background-color: #fff;
-  border-radius: 12px;
+  background-color: #f6f7f8;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #edeff1;
 }
 
 .search::placeholder {
@@ -41,4 +55,7 @@
 }
 .search:hover {
   filter: brightness(98%);
+}
+.fix{
+ margin-top: 72px;
 }
