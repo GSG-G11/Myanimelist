@@ -5,7 +5,7 @@ function AnimePage(props) {
   const [anime, setAnime] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const str = window.location.href;
-  const id = str.substring(str.indexOf("/") + 23) || str.substring(str.indexOf("/") + 31);
+  const id =  str.substring(str.indexOf("/") + 31);
 
   useEffect(() => {
     fetch(`https://kitsu.io/api/edge/anime?page[limit]=12&filter%5Bid%5D=${id}`)
