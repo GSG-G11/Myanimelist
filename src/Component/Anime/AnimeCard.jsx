@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import NotFound from "../NotFound";
 import { Link } from "react-router-dom";
 import "./AnimeCard.css";
 function AnimeCard(props) {
