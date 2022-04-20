@@ -1,3 +1,4 @@
+
 .container{
     display: flex;
     flex-direction: row;
@@ -8,6 +9,20 @@
     font-family: 'Poppins', sans-serif;
  
 }
+  /* scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #2E51A2;
+    border-radius: 50px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: gray;
+  }
+  
 .animeCard{
     display: flex;
     flex-direction: column;
@@ -28,11 +43,12 @@
 }
 
 .animeTitle {
-    font-size: 1em;
+    font-size:1rem;
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 10px;
     color: #2E51A2 ;
+    text-decoration: none;
 
 }
 .animeTitle:hover{
@@ -44,14 +60,12 @@
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: 600;
-    /* background-color: #2E51A2;
-    border-radius: 50%;
-    height: 35px;
-    width: 35px; */
-    color: #2E51A2;
+  
+    color: #2E51A2 ;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 
 }
 
@@ -60,6 +74,7 @@
     justify-content: space-between;
     padding: 0 20px;
     align-items: center;
+    height: 50px;
 }
 .loading{
     display: flex;
@@ -70,22 +85,7 @@
     font-size: 50px;
     font-weight: bold;
 }
-.btn{
-    background-color: #2E51A2;
-    color: #ffffff;
-    border-radius: 50px;
-    padding: 10px;
-    font-size: 1em;
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-    border: none;
-    outline: none;
-    box-shadow: 0 4px 8px 0 #2e51a279;
-   
-}
+
 Link{
     text-decoration: none;
     color: white;

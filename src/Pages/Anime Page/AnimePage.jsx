@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./AnimePage.css";
 
 function AnimePage(props) {
   const [anime, setAnime] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const str = window.location.href;
-  const id = str.substring(str.indexOf("/") + 23);
+  const id = str.substring(str.indexOf("/") + 23) || 555;
+
   useEffect(() => {
     fetch(`https://kitsu.io/api/edge/anime?page[limit]=12&filter%5Bid%5D=${id}`)
       .then((response) => response.json())
@@ -21,9 +21,7 @@ function AnimePage(props) {
       {isLoading ? (
         <div className="loading">Loading...</div>
       ) : (
-        //Anime Card
-        // Get Data
-        // one Anime only
+    
         <div className="pageContainer">
           <div className="animePage">
             <div className="imgAnime">
@@ -34,32 +32,45 @@ function AnimePage(props) {
             </div>
             <div className="pfooter">
               <div className="animePageTitle">
+                <span > Anime Name :  </span>
+
                 {anime.data[0].attributes.titles.en_jp}
               </div>
               <div className="synopsis">
+              <span className="nn"> Anime synopsis :  </span>
+
                 {anime.data[0].attributes.synopsis}
               </div>
 
               <div className="episodes">
+              <span > Anime episodes :  </span>
+
                 {anime.data[0].attributes.episodeCount}
               </div>
               <div className="startDate">
+              <span > Anime startDate :  </span>
+
                 {anime.data[0].attributes.startDate}
               </div>
-              <div className="endDate">{anime.data[0].attributes.endDate}</div>
+              <div className="endDate">
+              <span > Anime endDate :  </span>
+
+                {anime.data[0].attributes.endDate}</div>
               <div className="ratingRank">
+              <span > Anime ratingRank :  </span>
+
                 {anime.data[0].attributes.ratingRank}
               </div>
               <div className="averagePageRating">
+              <span > Anime averagePageRating :  </span>
+
                 {anime.data[0].attributes.averageRating}
               </div>
             </div>
           </div>
         </div>
       )}
-      <Link to="/" className="episodes">
-        Home
-      </Link>
+     
     </div>
   );
 }

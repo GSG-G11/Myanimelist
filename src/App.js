@@ -14,7 +14,9 @@ function App() {
       <div>
         <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <Routes>
-            <Route path="/" element={<AnimeCard title={searchTerm}  />} />
+            <Route path="/" element={<AnimeCard title={searchTerm} />} />
+
+
             <Route path="/anime/:animdID" element={<AnimePage />} />
         
           

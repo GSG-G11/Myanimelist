@@ -39,20 +39,15 @@ function AnimeCard(props) {
                 <img src={anime.attributes.posterImage.small} alt="anime" />
               </div>
               <div className="footer">
-                <div className="animeTitle">
-                  {anime.attributes.titles.en_jp}
-                </div>
+              <div className="animeTitle">
+                    <Link  className="animeTitle" to={`/anime/${anime.id}`}>
+                      {anime.attributes.titles.en_jp}
+                    </Link>
+                  </div>
                 <div className="averageRating">
                   {anime.attributes.averageRating}
                 </div>
-                <button className="btn">
-                  <Link to={`/anime/${anime.id}`}>
-                    <span>
-                      <i className="fas fa-play"></i>
-                    </span>
-                    <span>Watch</span>
-                  </Link>
-                </button>
+               
               </div>
             </div>
           ))): (<h1>No Anime Found</h1>)}

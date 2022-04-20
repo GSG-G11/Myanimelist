@@ -1,65 +1,67 @@
-.pageContainer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding:2px 20px 20px 20px;
-    margin-top:0;
-    font-family: 'Poppins', sans-serif;
+.pageContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2px 20px 20px 20px;
+  margin-top: 0;
+  font-family: "Poppins", sans-serif;
+}
+.animePage {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin: 10px;
+}
+.imgAnime img {
+  border-radius: 10px;
+    border: 5px solid #2E51A2;
+  object-fit: cover;
+}
+.synopsis {
+  text-align: justify;
+  height: 110px;
+  overflow: hidden;
+
  
-}
-.animePage{
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    padding-bottom: 10px;
-    background-color: #ffffff;
-    border-radius: 15px;
-border: 1px solid #2E51A2;
-    margin:10px;
-}
-.imgAnime img{
-   
-    border-radius: 10px 10px 0px 0px;
-    object-fit: cover;
-}
-.synopsis{
- 
-    text-align: justify;
-    padding: 10px;
 }
 .animePageTitle {
-    font-size: 1em;
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: #2E51A2 ;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #2e51a2;
+}
+.animePageTitle:hover {
+  color: #001850;
+  text-decoration: none;
+}
+ .averagePageRating,
+.episodes,
+.startDate,
+.endDate,
+.ratingRank,.nn {
+  font-size: 1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+
+  color: #2e51a2;
+  display: flex;
+
+} 
+span,.nn{
+    margin-right: 25px;
+    color: #030911;
 
 }
-.animePageTitle:hover{
-    color: #001850;
-    text-decoration: none;
-}
-.averagePageRating,.episodes,.startDate,.endDate,.ratingRank {
-    font-size: 1em;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    /* background-color: #2E51A2;
-    border-radius: 50%;
-    height: 35px;
-    width: 35px; */
-    color: #2E51A2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-}
-
-.pfooter{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    flex-direction: column;
-    align-items: center;
+.pfooter {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  flex-direction: column;
 }
