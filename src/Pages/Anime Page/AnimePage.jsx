@@ -5,7 +5,7 @@ function AnimePage(props) {
   const [anime, setAnime] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const str = window.location.href;
-  const id = str.substring(str.indexOf("/") + 23) || 555;
+  const id =  str.substring(str.indexOf("/") + 36);
 
   useEffect(() => {
     fetch(`https://kitsu.io/api/edge/anime?page[limit]=12&filter%5Bid%5D=${id}`)
@@ -61,11 +61,7 @@ function AnimePage(props) {
 
                 {anime.data[0].attributes.ratingRank}
               </div>
-              <div className="averagePageRating">
-              <span > Anime averagePageRating :  </span>
-
-                {anime.data[0].attributes.averageRating}
-              </div>
+              
             </div>
           </div>
         </div>

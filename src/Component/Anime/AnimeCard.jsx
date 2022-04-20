@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import logo from '../../assets/NOANIME.png'
+
 import "./AnimeCard.css";
 function AnimeCard(props) {
   const [anime, setAnime] = useState(props.anime);
@@ -27,7 +29,7 @@ function AnimeCard(props) {
   }, [search]);
 
   return (
-    <div>
+    <div className="all">
       {isLoading ? (
         <div className="loading">Loading...</div>
       ) : (
@@ -50,7 +52,7 @@ function AnimeCard(props) {
                
               </div>
             </div>
-          ))): (<h1>No Anime Found</h1>)}
+          ))): (<img src={logo} alt="404" />)}
          
         </div>
       )}
