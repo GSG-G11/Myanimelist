@@ -1,17 +1,24 @@
+import AnimeCard from "./Component/Anime/AnimeCard";
 import { Route, Routes } from 'react-router-dom';
 import AnimePage from "./Pages/Anime Page/AnimePage";
 import NotFound from "./Pages/NotFound";
 import Home from "./Pages/Home";
+import { Navbar } from "./Component/Navbar/Navbar";
+import { useState } from "react";
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
   
 
 
   return (
       <div>
-        
+        <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<AnimeCard title={searchTerm},{<Home />}  />} />
             <Route path="/anime/:animdID" element={<AnimePage />} />
+        
+          
+            <Route path="/" element={<Home />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
       </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NotFound from "../NotFound";
 import { Link } from "react-router-dom";
 import "./AnimeCard.css";
 function AnimeCard(props) {
@@ -32,8 +33,9 @@ function AnimeCard(props) {
         <div className="loading">Loading...</div>
       ) : (
         <div className="container">
-          {anime.data.map((anime, index) => (
-            <div className="animeCard" key={index}>
+          {anime.data.length ? (anime.data.map((anime,index) => (
+            <div  className="animeCard" key={index}>
+          
               <div className="imgCard">
                 <img src={anime.attributes.posterImage.small} alt="anime" />
               </div>
@@ -54,7 +56,8 @@ function AnimeCard(props) {
                 </button>
               </div>
             </div>
-          ))}
+          ))): (<h1>No Anime Found</h1>)}
+         
         </div>
       )}
     </div>
