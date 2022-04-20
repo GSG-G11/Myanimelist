@@ -2,7 +2,7 @@ import AnimeCard from "./Component/Anime/AnimeCard";
 import { Route, Routes } from 'react-router-dom';
 import AnimePage from "./Pages/Anime Page/AnimePage";
 import NotFound from "./Pages/NotFound";
-import Home from "./Pages/Home";
+
 import { Navbar } from "./Component/Navbar/Navbar";
 import { useState } from "react";
 function App() {
@@ -18,7 +18,6 @@ function App() {
             <Route path="/anime/:animdID" element={<AnimePage />} />
         
           
-            <Route path="/" element={<Home />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
       </div>

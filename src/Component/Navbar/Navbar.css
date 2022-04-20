@@ -24,10 +24,10 @@
 }
 
 .login {
-  background-color: rgb(23, 23, 228);
-  color: floralwhite;
+  background-color: #2E51A2;
+  color: white;
   padding: 0 30px;
-  border-radius: 10px;
+  border-radius: 40px;
   height: 50px;
     border: transparent;
   font-weight: bold;
@@ -36,8 +36,7 @@
   margin-right: 170px;
 }
 .login:hover {
-  background-color: rgb(113, 113, 141);
-  color: white;
+  background-color: #2e51a285;
 }
 
 .search {

@@ -61,11 +61,7 @@ function AnimePage(props) {
 
                 {anime.data[0].attributes.ratingRank}
               </div>
-              <div className="averagePageRating">
-              <span > Anime averagePageRating :  </span>
-
-                {anime.data[0].attributes.averageRating}
-              </div>
+              
             </div>
           </div>
         </div>
